@@ -1,5 +1,17 @@
 # Experiment
 
+
+<p align="center">
+<a href="https://travis-ci.org/orchidsoftware/experiment/"><img src="https://travis-ci.org/orchidsoftware/experiment.svg?branch=master"></a>
+<a href="https://styleci.io/repos/73781385"><img src="https://styleci.io/repos/73781385/shield?branch=master"/></a>
+<a href="https://codecov.io/gh/orchidsoftware/platform"><img src="https://codecov.io/gh/orchidsoftware/experiment/branch/master/graph/badge.svg" /></a>
+<a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/v/stable"/></a>
+<a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/downloads"/></a>
+<a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/license"/></a>
+<a href="https://t.me/orchid_community"><img src="https://img.shields.io/badge/chat-telegram-blue.svg"/></a>
+</p>
+
+
 An A/B Testing suite for Laravel which allows multiple experiments.
 
 
@@ -69,7 +81,7 @@ This allows you to transfer data to Google analytics and similar services using 
 alert( document.cookie );
 ```
 
-Laravel encrypts all cookies by default, so do not forget to specify your key in the exceptions `app/Http/Middleware/EncryptCookies.php``:
+Laravel encrypts all cookies by default, so do not forget to specify your key in the exceptions `app/Http/Middleware/EncryptCookies.php`:
 
 ```php
 namespace App\Http\Middleware;
