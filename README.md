@@ -3,7 +3,7 @@
 
 <p align="center">
 <a href="https://travis-ci.org/orchidsoftware/experiment/"><img src="https://travis-ci.org/orchidsoftware/experiment.svg?branch=master"></a>
-<a href="https://styleci.io/repos/73781385"><img src="https://styleci.io/repos/73781385/shield?branch=master"/></a>
+<a href="https://styleci.io/repos/159730043"><img src="https://styleci.io/repos/159730043/shield?branch=master"/></a>
 <a href="https://codecov.io/gh/orchidsoftware/platform"><img src="https://codecov.io/gh/orchidsoftware/experiment/branch/master/graph/badge.svg" /></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/v/stable"/></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/downloads"/></a>
