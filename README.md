@@ -61,12 +61,35 @@ http:://example.com?my-key=A
 I recommend putting this on an middleware and immediately install a cookie using
 
 ```php
-$experiment = new Experiment('AB');
+namespace App\Http\Middleware;
 
-$experiment->startAndSaveCookie($request,[
-    'A' => 50,
-    'B' => 50,
-]);
+use Closure;
+use Orchid\Experiment\Experiment;
+
+class Experiments
+{
+    
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     *
+     * @return mixed
+     * @throws \Exception
+     */
+    public function handle($request, Closure $next)
+    {
+        $experiment = new Experiment('AB');
+
+        $experiment->startAndSaveCookie([
+            'A' => 50,
+            'B' => 50,
+        ]);
+        
+        return $next($request);
+    }
+}
 ```
 
 This allows you to transfer data to Google analytics and similar services using javascript
