@@ -41,11 +41,9 @@ This allows us to clearly define how the testing will be distributed.
 
 
 ```php
-
 $storage = Cache::store('redis');
 $experiment = new Experiment('my-key',$storage);
 
-// Distribution
 $ab = $experiment->start([
     'A' => 50,
     'B' => 100,
@@ -63,14 +61,12 @@ http:://example.com?my-key=A
 I recommend putting this on an middleware and immediately install a cookie using
 
 ```php
-
 $experiment = new Experiment('AB');
 
 $experiment->startAndSaveCookie($request,[
     'A' => 50,
     'B' => 50,
 ]);
-
 ```
 
 This allows you to transfer data to Google analytics and similar services using javascript
