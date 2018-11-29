@@ -18,7 +18,7 @@ class Experiment
     private $store;
 
     /**
-     * The key of the experiment for cookie
+     * The key of the experiment for cookie.
      *
      * @var string
      */
@@ -27,20 +27,21 @@ class Experiment
     /**
      * Experiment constructor.
      *
-     * @param string $key
+     * @param string     $key
      * @param Repository $store
      */
     public function __construct(string $key = 'AB', Repository $store = null)
     {
         $this->store = $store ?? Cache::store();
-        $this->key   = $key;
+        $this->key = $key;
     }
 
     /**
      * @param array $experiments
      *
-     * @return string|null
      * @throws \Exception
+     *
+     * @return string|null
      */
     public function startAndSaveCookie(array $experiments): ?string
     {
@@ -56,8 +57,9 @@ class Experiment
      *
      * @param array $experiments
      *
-     * @return string|null
      * @throws \Exception
+     *
+     * @return string|null
      */
     public function start(array $experiments): ?string
     {
@@ -74,7 +76,6 @@ class Experiment
         $prepareExperiments = $this->prepareExperiments($experiments);
 
         foreach ($experiments as $key => $maxValue) {
-
             if ($prepareExperiments[$key] >= $maxValue) {
                 continue;
             }
@@ -104,8 +105,9 @@ class Experiment
     /**
      * @param array $experiments
      *
-     * @return array
      * @throws \Exception
+     *
+     * @return array
      */
     private function prepareExperiments(array $experiments = []): array
     {
@@ -125,5 +127,4 @@ class Experiment
             $this->store->decrement($key, $value);
         }
     }
-
 }

@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace Orchid\Experiment\Tests;
 
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Cookie;
 use Orchestra\Testbench\TestCase;
 use Orchid\Experiment\Experiment;
-use Illuminate\Contracts\Cache\Repository;
 
 class ExperimentTest extends TestCase
 {
-
     /**
      * @var string
      */
@@ -31,7 +29,6 @@ class ExperimentTest extends TestCase
      */
     protected $store;
 
-
     /**
      * @throws \Exception
      */
@@ -43,13 +40,12 @@ class ExperimentTest extends TestCase
 
         //ob_start();
         foreach ($this->experiments as $key => $value) {
-            $this->store->set($key,0);
+            $this->store->set($key, 0);
         }
 
         unset($_COOKIE[$this->key]);
         unset($_GET[$this->key]);
     }
-
 
     /**
      * @throws \Exception
@@ -63,8 +59,9 @@ class ExperimentTest extends TestCase
     }
 
     /**
-     * @return \Orchid\Experiment\Experiment
      * @throws \Exception
+     *
+     * @return \Orchid\Experiment\Experiment
      */
     public function getExperiment(): Experiment
     {
@@ -88,7 +85,7 @@ class ExperimentTest extends TestCase
     public function testReadCookieValue()
     {
         $items = array_keys($this->experiments);
-        $rand  = $items[array_rand($items)];
+        $rand = $items[array_rand($items)];
 
         $_COOKIE[$this->key] = $rand;
 
@@ -104,7 +101,7 @@ class ExperimentTest extends TestCase
     public function testReadGetValue()
     {
         $items = array_keys($this->experiments);
-        $rand  = $items[array_rand($items)];
+        $rand = $items[array_rand($items)];
 
         $_GET[$this->key] = $rand;
 
@@ -144,5 +141,4 @@ class ExperimentTest extends TestCase
             'Orchid_EXPERIMENT_PROJECT_HEADER_SUPER' => 990,
         ]);
     }
-
 }
