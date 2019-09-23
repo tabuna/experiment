@@ -42,7 +42,7 @@ class ExperimentTest extends TestCase
             $this->store->set($key, 0);
         }
 
-      unset($_COOKIE[$this->key], $_GET[$this->key]);
+        unset($_COOKIE[$this->key], $_GET[$this->key]);
     }
 
     /**
