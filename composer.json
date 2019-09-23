@@ -36,8 +36,7 @@
   "require-dev": {
     "orchestra/testbench": "~4.0",
     "phpunit/php-code-coverage": "^7.0",
-    "phpunit/phpunit": "^8.0",
-    "predis/predis": "^1.1"
+    "phpunit/phpunit": "^8.0"
   },
   "config": {
     "preferred-install": "dist",
