@@ -32,19 +32,17 @@ class ExperimentTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
 
         $this->store = Cache::store();
 
-        //ob_start();
         foreach ($this->experiments as $key => $value) {
             $this->store->set($key, 0);
         }
 
-        unset($_COOKIE[$this->key]);
-        unset($_GET[$this->key]);
+      unset($_COOKIE[$this->key], $_GET[$this->key]);
     }
 
     /**
