@@ -118,6 +118,11 @@ class ExperimentTest extends TestCase
             ->start([]);
 
         $this->assertEquals(null, $value);
+
+        $value = $this->getExperiment()
+            ->startAndSaveCookie([]);
+
+        $this->assertNull($value);
     }
 
     public function testRatioPercentage()
