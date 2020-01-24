@@ -7,7 +7,6 @@
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/v/stable"/></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/downloads"/></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/license"/></a>
-<a href="https://t.me/orchid_community"><img src="https://img.shields.io/badge/chat-telegram-blue.svg"/></a>
 
 
 An A/B Testing suite for Laravel which allows multiple experiments.
@@ -135,8 +134,3 @@ If you would like to support development by making a donation you can do so [her
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
----
-
-> [orchid.software](https://orchid.software) &nbsp;&middot;&nbsp;
-> GitHub [@tabuna](https://github.com/tabuna) &nbsp;&middot;&nbsp;
-> Twitter [@orchid_platform](https://twitter.com/orchid_platform)
