@@ -39,8 +39,9 @@ class Experiment
     /**
      * @param array $experiments
      *
-     * @return string|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     *
+     * @return string|null
      */
     public function startAndSaveCookie(array $experiments): ?string
     {
@@ -57,8 +58,9 @@ class Experiment
      *
      * @param array $experiments
      *
-     * @return string|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     *
+     * @return string|null
      */
     public function start(array $experiments): ?string
     {
@@ -108,8 +110,9 @@ class Experiment
     /**
      * @param array $experiments
      *
-     * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
+     *
+     * @return array
      */
     private function prepareExperiments(array $experiments = []): array
     {
