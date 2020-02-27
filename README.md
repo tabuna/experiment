@@ -41,7 +41,7 @@ This allows us to clearly define how the testing will be distributed.
 
 ```php
 $storage = Cache::store('redis');
-$experiment = new Experiment('my-key',$storage);
+$experiment = new Experiment('my-key', $storage);
 
 $ab = $experiment->start([
     'A' => 50,
