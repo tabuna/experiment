@@ -39,15 +39,15 @@ class Experiment
     /**
      * @param array $experiments
      *
-     * @throws \Exception
-     *
      * @return string|null
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function startAndSaveCookie(array $experiments): ?string
     {
         $ab = $this->start($experiments);
 
         Cookie::queue(cookie($this->key, $ab));
+        $_COOKIE[$this->key] = $ab;
 
         return $ab;
     }
@@ -57,9 +57,8 @@ class Experiment
      *
      * @param array $experiments
      *
-     * @throws \Exception
-     *
      * @return string|null
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function start(array $experiments): ?string
     {
@@ -67,7 +66,7 @@ class Experiment
             return null;
         }
 
-        $select = $this->getKeyFromRequest();
+        $select = self::getCookieValue($this->key);
 
         if ($select !== null) {
             return $select;
@@ -91,23 +90,26 @@ class Experiment
     }
 
     /**
+     * @param string $key
+     * @param null   $default
+     *
      * @return mixed|null
      */
-    private function getKeyFromRequest()
+    public static function getCookieValue(string $key, $default = null)
     {
-        return request()->get($this->key)
-            ?? request()->cookie($this->key)
-            ?? $_GET[$this->key]
-            ?? $_COOKIE[$this->key]
-            ?? null;
+        return
+            request()->get($key)
+            ?? request()->cookie($key)
+            ?? $_GET[$key]
+            ?? $_COOKIE[$key]
+            ?? $default;
     }
 
     /**
      * @param array $experiments
      *
-     * @throws \Exception
-     *
      * @return array
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     private function prepareExperiments(array $experiments = []): array
     {

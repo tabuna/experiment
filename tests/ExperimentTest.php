@@ -6,47 +6,16 @@ namespace Orchid\Experiment\Tests;
 
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cookie;
 use Orchestra\Testbench\TestCase;
 use Orchid\Experiment\Experiment;
 
 class ExperimentTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    public $key = 'TEST_EXPERIMENT';
+    use Environment;
 
     /**
-     * @var array
-     */
-    public $experiments = [
-        'Orchid_EXPERIMENT_PROJECT_BLOCK_MENU'   => 1,
-        'Orchid_EXPERIMENT_PROJECT_HEADER_SUPER' => 99,
-    ];
-
-    /**
-     * @var Repository
-     */
-    protected $store;
-
-    /**
-     * @throws \Exception
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->store = Cache::store();
-
-        foreach ($this->experiments as $key => $value) {
-            $this->store->set($key, 0);
-        }
-
-        unset($_COOKIE[$this->key], $_GET[$this->key]);
-    }
-
-    /**
-     * @throws \Exception
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function testForNewValue()
     {
@@ -57,17 +26,7 @@ class ExperimentTest extends TestCase
     }
 
     /**
-     * @throws \Exception
-     *
-     * @return \Orchid\Experiment\Experiment
-     */
-    public function getExperiment(): Experiment
-    {
-        return new Experiment($this->key);
-    }
-
-    /**
-     * @throws \Exception
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function testSetCookieValue()
     {
@@ -78,7 +37,7 @@ class ExperimentTest extends TestCase
     }
 
     /**
-     * @throws \Exception
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function testReadCookieValue()
     {
@@ -94,7 +53,7 @@ class ExperimentTest extends TestCase
     }
 
     /**
-     * @throws \Exception
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function testReadGetValue()
     {
@@ -110,7 +69,7 @@ class ExperimentTest extends TestCase
     }
 
     /**
-     * @throws \Exception
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function testEmptyArguments()
     {
