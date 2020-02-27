@@ -14,7 +14,6 @@ use Orchid\Experiment\ExperimentServiceProvider;
  */
 trait Environment
 {
-
     /**
      * @var string
      */
@@ -33,13 +32,10 @@ trait Environment
      */
     protected $store;
 
-    /**
-     *
-     */
     protected function getEnvironmentSetUp()
     {
         config()->set('view.paths', [
-            __DIR__ . '/stubs/'
+            __DIR__.'/stubs/',
         ]);
     }
 
@@ -49,7 +45,7 @@ trait Environment
     protected function getPackageProviders()
     {
         return [
-            ExperimentServiceProvider::class
+            ExperimentServiceProvider::class,
         ];
     }
 

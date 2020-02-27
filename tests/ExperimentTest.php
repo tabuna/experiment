@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Orchid\Experiment\Tests;
 
-use Illuminate\Contracts\Cache\Repository;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Cookie;
 use Orchestra\Testbench\TestCase;
-use Orchid\Experiment\Experiment;
 
 class ExperimentTest extends TestCase
 {
