@@ -5,10 +5,7 @@ sudo: required
 php:
   - 7.2
   - 7.3
-
-services:
-  - memcached
-  - redis-server
+  - 7.4
 
 cache:
   directories:
