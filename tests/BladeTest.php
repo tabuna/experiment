@@ -6,7 +6,6 @@ namespace Orchid\Experiment\Tests;
 
 class BladeTest extends TestCase
 {
-
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Throwable
