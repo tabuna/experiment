@@ -6,7 +6,6 @@ namespace Orchid\Experiment\Tests;
 
 class ExperimentTest extends TestCase
 {
-
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
