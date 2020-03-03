@@ -9,11 +9,9 @@ use Illuminate\Support\Facades\Cache;
 use Orchid\Experiment\Experiment;
 use Orchid\Experiment\ExperimentServiceProvider;
 
-/**
- * Trait Environment.
- */
-trait Environment
+class TestCase extends \Orchestra\Testbench\TestCase
 {
+
     /**
      * @var string
      */
@@ -32,17 +30,30 @@ trait Environment
      */
     protected $store;
 
-    protected function getEnvironmentSetUp()
+    /**
+     * @return \Orchid\Experiment\Experiment
+     * @throws \Exception
+     *
+     */
+    public function getExperiment(): Experiment
+    {
+        return new Experiment($this->key);
+    }
+
+    /**
+     *
+     */
+    protected function getEnvironmentSetUp($app)
     {
         config()->set('view.paths', [
-            __DIR__.'/stubs/',
+            __DIR__ . '/stubs/',
         ]);
     }
 
     /**
      * @return array
      */
-    protected function getPackageProviders()
+    protected function getPackageProviders($app): array
     {
         return [
             ExperimentServiceProvider::class,
@@ -63,15 +74,5 @@ trait Environment
         }
 
         unset($_COOKIE[$this->key], $_GET[$this->key]);
-    }
-
-    /**
-     * @throws \Exception
-     *
-     * @return \Orchid\Experiment\Experiment
-     */
-    public function getExperiment(): Experiment
-    {
-        return new Experiment($this->key);
     }
 }

@@ -126,7 +126,7 @@ class Experiment
     /**
      * @param array $keys
      */
-    private function resetHistory(array $keys)
+    private function resetHistory(array $keys): void
     {
         foreach ($keys as $key => $value) {
             $this->store->decrement($key, $value);

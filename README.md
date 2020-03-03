@@ -24,6 +24,8 @@ $ composer require orchid/experiment
 Your cache driver will be used by default.
 
 ```php
+use Orchid\Experiment\Experiment;
+
 $experiment = new Experiment();
 
 // Distribution
@@ -40,6 +42,9 @@ This allows us to clearly define how the testing will be distributed.
 
 
 ```php
+use Orchid\Experiment\Experiment;
+use Illuminate\Support\Facades\Cache;
+
 $storage = Cache::store('redis');
 $experiment = new Experiment('my-key', $storage);
 

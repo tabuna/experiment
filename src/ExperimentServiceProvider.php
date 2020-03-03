@@ -14,9 +14,9 @@ class ExperimentServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        Blade::if('experiment', function (string $key, $value) {
+        Blade::if('experiment', static function (string $key, $value) {
             return Experiment::getCookieValue($key) === $value;
         });
     }

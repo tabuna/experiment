@@ -4,17 +4,14 @@ declare(strict_types=1);
 
 namespace Orchid\Experiment\Tests;
 
-use Orchestra\Testbench\TestCase;
-
 class BladeTest extends TestCase
 {
-    use Environment;
 
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Throwable
      */
-    public function testCookieBlade()
+    public function testCookieBlade(): void
     {
         $value = $this->getExperiment()
             ->startAndSaveCookie($this->experiments);
@@ -28,7 +25,7 @@ class BladeTest extends TestCase
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Throwable
      */
-    public function testNotFoundBlade()
+    public function testNotFoundBlade(): void
     {
         $this->getExperiment()->start($this->experiments);
 

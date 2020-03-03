@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace Orchid\Experiment\Tests;
 
-use Orchestra\Testbench\TestCase;
-
 class ExperimentTest extends TestCase
 {
-    use Environment;
 
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function testForNewValue()
+    public function testForNewValue(): void
     {
         $value = $this->getExperiment()
             ->start($this->experiments);
@@ -24,7 +21,7 @@ class ExperimentTest extends TestCase
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function testSetCookieValue()
+    public function testSetCookieValue(): void
     {
         $value = $this->getExperiment()
             ->startAndSaveCookie($this->experiments);
@@ -35,7 +32,7 @@ class ExperimentTest extends TestCase
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function testReadCookieValue()
+    public function testReadCookieValue(): void
     {
         $items = array_keys($this->experiments);
         $rand = $items[array_rand($items)];
@@ -51,7 +48,7 @@ class ExperimentTest extends TestCase
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function testReadGetValue()
+    public function testReadGetValue(): void
     {
         $items = array_keys($this->experiments);
         $rand = $items[array_rand($items)];
@@ -67,7 +64,7 @@ class ExperimentTest extends TestCase
     /**
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function testEmptyArguments()
+    public function testEmptyArguments(): void
     {
         $value = $this->getExperiment()
             ->start([]);
@@ -80,7 +77,7 @@ class ExperimentTest extends TestCase
         $this->assertNull($value);
     }
 
-    public function testRatioPercentage()
+    public function testRatioPercentage(): void
     {
         $count = [
             'Orchid_EXPERIMENT_PROJECT_BLOCK_MENU'   => 0,
