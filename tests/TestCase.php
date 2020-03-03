@@ -11,7 +11,6 @@ use Orchid\Experiment\ExperimentServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
-
     /**
      * @var string
      */
@@ -31,22 +30,19 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected $store;
 
     /**
-     * @return \Orchid\Experiment\Experiment
      * @throws \Exception
      *
+     * @return \Orchid\Experiment\Experiment
      */
     public function getExperiment(): Experiment
     {
         return new Experiment($this->key);
     }
 
-    /**
-     *
-     */
     protected function getEnvironmentSetUp($app)
     {
         config()->set('view.paths', [
-            __DIR__ . '/stubs/',
+            __DIR__.'/stubs/',
         ]);
     }
 
