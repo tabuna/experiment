@@ -134,7 +134,7 @@ class EncryptCookies extends Middleware
 
 If you want to use the blade, you still must install the middleware after this call is as example:
 
-```html
+```blade
 @experiment('my-key', 'A')
     <button>Click me</button>
 @else
