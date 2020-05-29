@@ -24,8 +24,6 @@ $ composer require orchid/experiment
 Your cache driver will be used by default.
 
 ```php
-<?php
-
 use Orchid\Experiment\Experiment;
 
 $experiment = new Experiment();
@@ -69,8 +67,6 @@ http:://example.com?my-key=A
 I recommend putting this on an middleware and immediately install a cookie using
 
 ```php
-<?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -111,8 +107,6 @@ alert( document.cookie );
 Laravel encrypts all cookies by default, so do not forget to specify your key in the exceptions `app/Http/Middleware/EncryptCookies.php`:
 
 ```php
-<?php
-
 namespace App\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
