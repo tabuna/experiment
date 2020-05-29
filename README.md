@@ -42,8 +42,6 @@ This allows us to clearly define how the testing will be distributed.
 
 
 ```php
-<?php
-
 use Orchid\Experiment\Experiment;
 use Illuminate\Support\Facades\Cache;
 
