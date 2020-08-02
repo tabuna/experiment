@@ -142,11 +142,6 @@ php vendor/bin/phpunit --coverage-html ./logs/coverage ./tests
 ```
 
 
-## Donate & Support
-
-If you would like to support development by making a donation you can do so [here](https://www.paypal.me/tabuna/10usd). &#x1F60A;
-
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
