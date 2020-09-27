@@ -3,7 +3,7 @@
 
 ![tests](https://github.com/tabuna/experiment/workflows/run-tests/badge.svg)
 <a href="https://styleci.io/repos/159730043"><img src="https://styleci.io/repos/159730043/shield?branch=master"/></a>
-<a href="https://codecov.io/gh/tabuna/experiment"><img src="https://codecov.io/gh/orchidsoftware/experiment/branch/master/graph/badge.svg" /></a>
+<a href="https://codecov.io/gh/tabuna/experiment"><img src="https://codecov.io/gh/tabuna/experiment/branch/master/graph/badge.svg" /></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/v/stable"/></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/downloads"/></a>
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/license"/></a>
