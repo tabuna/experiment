@@ -9,7 +9,7 @@
 <a href="https://packagist.org/packages/orchid/experiment"><img src="https://poser.pugx.org/orchid/experiment/license"/></a>
 
 
-An A/B Testing suite for Laravel which allows multiple experiments.
+An A/B Testing suite for Laravel, which allows multiple experiments.
 
 
 ## Installation
@@ -36,10 +36,9 @@ $ab = $experiment->start([
 
 ```
 
-The experiment is transmitted in the form of an array, where the keys are the names, and the values are the required ratios.
-For example, if you specify two values containing A -> 50 and B -> 100, then first there will be 50 users with the value A, then there will be 100 users with the value B. 
-This allows us to clearly define how the testing will be distributed.
-
+The experiment is transmitted in an array, where the keys are the names, and the values are the required ratios.
+For example, if you specify two values containing A -> 50 and B -> 100, there will be 50 users with the value A, then there will be 100 users with the value B.
+It allows us to define how the testing will be distributed clearly.
 
 ```php
 use Orchid\Experiment\Experiment;
@@ -62,7 +61,7 @@ http:://example.com?my-key=A
 
 ### Cookie
 
-I recommend putting this on an middleware and immediately install a cookie using
+I recommend putting this on middleware and immediately install a cookie using.
 
 ```php
 namespace App\Http\Middleware;
@@ -96,7 +95,7 @@ class Experiments
 }
 ```
 
-This allows you to transfer data to Google analytics and similar services using javascript
+It allows you to transfer data to Google analytics and similar services using javascript.
 
 ```javascript
 alert( document.cookie );
