@@ -1,3 +1,8 @@
+> **Warning**
+>
+> With the release of Laravel 10, there is an official [Pennant](https://laravel.com/docs/10.x/pennant) package that can replace the current one. So consider upgrading to it.
+
+
 # Experiment
 
 
